@@ -11,3 +11,10 @@ it('renders without crashing', () => {
     // clean up code
     ReactDOM.unmountComponentAtNode(div);
   });
+
+  it('renders the UI as expected', () => {
+    const tree2 = renderer
+      .create(<List />)
+      .toJSON();
+    expect(tree2).toMatchSnapshot();  
+    });
